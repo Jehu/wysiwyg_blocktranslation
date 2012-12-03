@@ -1,0 +1,6 @@
+name = "WYSIWYG Block Translation"
+description = "Enable WYSIWYG module for block translaton form"
+package = "billiton"
+core = 7.x
+dependencies[] = "wysiwyg"
+dependencies[] = "i18n"
