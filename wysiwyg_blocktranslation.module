@@ -4,7 +4,8 @@ function wysiwyg_blocktranslation_form_alter(&$form, &$form_state, $form_id){
     foreach($form['strings']['all'] as $name => $field){
           if(
               preg_match('/blocks:block:[0-9]+:body/i',$name) ||
-	      preg_match('/taxonomy:term:[0-9]+:description/i' , $name)
+	      preg_match('/taxonomy:term:[0-9]+:description/i' , $name) ||
+              preg_match('/taxonomy:vocabulary:[0-9]+:description/i', $name)
           ) {
               // Change textarea to text_format
               $form['strings']['all'][$name]['#type'] = 'text_format';
