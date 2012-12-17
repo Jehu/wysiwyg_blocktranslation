@@ -4,7 +4,7 @@ function wysiwyg_blocktranslation_form_alter(&$form, &$form_state, $form_id){
     foreach($form['strings']['all'] as $name => $field){
           if(
               preg_match('/blocks:block:[0-9]+:body/i',$name) ||
-	      preg_match('/taxonomy:term:[0-9]+:description/i' , $name) ||
+              preg_match('/taxonomy:term:[0-9]+:description/i' , $name) ||
               preg_match('/taxonomy:vocabulary:[0-9]+:description/i', $name)
           ) {
               // Change textarea to text_format
@@ -23,7 +23,8 @@ function wysiwyg_blocktranslation_string_translate_page_form_submit($form, &$for
   foreach($form_state['values']['strings'] as $name => $field) {
     if(
         preg_match('/blocks:block:[0-9]+:body/i', $name) ||
-        preg_match('/taxonomy:term:[0-9]+:description/i', $name)
+        preg_match('/taxonomy:term:[0-9]+:description/i', $name) ||
+        preg_match('/taxonomy:vocabulary:[0-9]+:description/i', $name)
     ) {
       unset($form_state['values']['strings'][$name]['format']);
     }
